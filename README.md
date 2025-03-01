@@ -1,59 +1,62 @@
-# AngularCustomCursor
+# Angular CustomCursor 🎨🖱️
+A lightweight and customizable cursor library for Angular. Replace the default cursor with a smooth animated cursor for a unique UI experience.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+## 📦 Installation
 
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Install the package using npm or yarn:
 
 ```bash
-ng generate component component-name
+npm install angular-custom-cursor
+```
+or:
+```bash
+yarn add angular-custom-cursor
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## usage
+
+### 1️⃣ Standalone Component Approach (Angular 15+)
+`If your app uses standalone components, you can directly import AngularCustomCursorComponent:`
+
+#### ✅ Import in app.component.ts
 
 ```bash
-ng generate --help
+import { Component } from '@angular/core';
+import { AngularCustomCursorComponent } from 'angular-custom-cursor';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [AngularCustomCursorComponent], // Import here
+})
+
+export class AppComponent {}
+
 ```
+### 2️⃣ Non-Standalone (NgModule) Approach
+`If you are using a traditional NgModule-based Angular app, follow these steps:`
+#### ✅ Import in app.module.ts
+`Modify app.module.ts to include AngularCustomCursorModule:`
+```bash
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { AngularCustomCursorModule } from 'angular-custom-cursor';
 
-## Building
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    AngularCustomCursorModule // Import here
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
 
-To build the project run:
+```
+## ✅ Use in app.component.html
 
 ```bash
-ng build
+<lib-angular-custom-cursor></lib-angular-custom-cursor>
+
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
