@@ -60,3 +60,28 @@ export class AppModule {}
 <lib-angular-custom-cursor></lib-angular-custom-cursor>
 
 ```
+
+### 3️⃣ You can just Import in `App.component.ts` to use all over the application.
+```bash
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { AngularCustomCursorComponent } from 'angular-custom-cursor';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, AngularCustomCursorComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'demo-project';
+}
+
+```
+## ✅ Use in app.component.html
+
+```bash
+<lib-angular-custom-cursor></lib-angular-custom-cursor>
+
+```
